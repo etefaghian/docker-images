@@ -1,0 +1,17 @@
+version: '2'
+services:
+
+  ### Mysql container
+  mysql:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: innodax_test
+      MYSQL_USER: etefaghian
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_HOST: '%'  # needs to be enclosed with quotes
